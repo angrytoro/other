@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="wap-forum" extends="wap-default" namespace="/bbs">
+		<action name="index" class="com.pjxy.wap.forum.action.ForumAction">
+			<interceptor-ref name="ContentTypeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result type="freemarker">/WEB-INF/ui/wap/forum/Index.ftl</result>
+		</action>
+		<action name="post" class="com.pjxy.wap.forum.action.PostAction">
+			<interceptor-ref name="ContentTypeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result type="freemarker">/WEB-INF/ui/wap/forum/Post.ftl</result>
+		</action>
+		<action name="viewHotPost" class="com.pjxy.wap.forum.action.QuickPostAction"
+			method="viewHotPost">
+			<interceptor-ref name="ContentTypeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result type="freemarker">/WEB-INF/ui/wap/forum/QuickPostList.ftl</result>
+		</action>
+		<action name="viewNewPost" class="com.pjxy.wap.forum.action.QuickPostAction"
+			method="viewNewPost">
+			<interceptor-ref name="ContentTypeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result type="freemarker">/WEB-INF/ui/wap/forum/QuickPostList.ftl</result>
+		</action>
+		<action name="viewWellPost" class="com.pjxy.wap.forum.action.QuickPostAction"
+			method="viewWellPost">
+			<interceptor-ref name="ContentTypeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result type="freemarker">/WEB-INF/ui/wap/forum/QuickPostList.ftl</result>
+		</action>
+	</package>
+</struts>

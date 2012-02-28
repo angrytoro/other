@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.objectFactory" value="guice" />
+	<constant name="struts.freemarker.templatesCache" value="true" />
+	<constant name="struts.action.extension" value="wml," />
+	<constant name="struts.freemarker.manager.classname" value="com.pjxy.wap.ui.FreemarkerManagerExt" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	<package name="wap-default" extends="struts-default" abstract="true"
+		namespace="">
+		<interceptors>
+			<interceptor name="ContentTypeInterceptor"
+				class="com.pjxy.wap.interceptor.WapContentTypeInterceptor">
+			</interceptor>
+		</interceptors>
+		<global-results>
+			<result name="login" type="freemarker">/WEB-INF/ui/wap/user/Login.ftl
+			</result>
+		</global-results>
+	</package>
+	<include file="com/pjxy/wap/user/action/user.xml"></include>
+	<include file="com/pjxy/wap/forum/action/forum.xml"></include>
+</struts>
+

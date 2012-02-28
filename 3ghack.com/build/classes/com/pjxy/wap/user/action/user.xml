@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="wap-user" extends="wap-default" namespace="/user">
+		<action name="login" class="com.pjxy.wap.user.action.LoginAction">
+			<interceptor-ref name="ContentTypeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result name="input" type="freemarker">/WEB-INF/ui/wap/user/Login.ftl
+			</result>
+			<result name="success" type="redirect">./autoLogin.wml?sid=${sid}
+			</result>
+		</action>
+		<action name="autoLogin" class="com.pjxy.wap.user.action.AutoLoginAction">
+			<interceptor-ref name="ContentTypeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result name="success" type="freemarker">/WEB-INF/ui/wap/user/AutoLogin.ftl
+			</result>
+		</action>
+		<action name="showUser" class="com.pjxy.wap.user.action.ShowUserAction">
+			<interceptor-ref name="ContentTypeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result name="success" type="freemarker">/WEB-INF/ui/wap/user/UserHomepage.ftl
+			</result>
+		</action>
+		<action name="showUserPost" class="com.pjxy.wap.user.action.ShowUserPostAction">
+			<interceptor-ref name="ContentTypeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result name="success" type="freemarker">/WEB-INF/ui/wap/forum/UserPosts.ftl
+			</result>
+			<result name="input" type="freemarker">/WEB-INF/ui/wap/user/UserHomepage.ftl
+			</result>
+		</action>
+		<action name="showProfile" class="com.pjxy.wap.user.action.ModifyProfileAction"
+			method="showProfile">
+			<interceptor-ref name="ContentTypeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result type="freemarker">/WEB-INF/ui/wap/forum/ModifyProfile.ftl</result>
+		</action>
+		<action name="modifyProfile" class="com.pjxy.wap.user.action.ModifyProfileAction"
+			method="modify">
+			<interceptor-ref name="ContentTypeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result name="success" type="freemarker">/WEB-INF/ui/wap/forum/ModifySuccess.ftl
+			</result>
+			<result name="input" type="freemarker">/WEB-INF/ui/wap/forum/ModifyProfile.ftl
+			</result>
+		</action>
+		<action name="enterModify" class="com.pjxy.wap.user.action.ModifyPasswordAtion"
+			method="enterModify">
+			<interceptor-ref name="ContentTypeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result name="success" type="freemarker">/WEB-INF/ui/wap/forum/ModifyPassword.ftl
+			</result>
+		</action>
+		<action name="modifyPassword" class="com.pjxy.wap.user.action.ModifyPasswordAtion">
+			<interceptor-ref name="ContentTypeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result name="success" type="freemarker">/WEB-INF/ui/wap/forum/ModifySuccess.ftl
+			</result>
+			<result name="input" type="freemarker">/WEB-INF/ui/wap/forum/ModifyPassword.ftl
+			</result>
+		</action>
+		<action name="register" class="com.pjxy.wap.user.action.RegisterAction">
+			<interceptor-ref name="ContentTypeInterceptor" />
+			<interceptor-ref name="defaultStack" />
+			<result name="success">www.baidu.com</result>
+			<result name="input">www.google.com</result>
+		</action>
+	</package>
+</struts>

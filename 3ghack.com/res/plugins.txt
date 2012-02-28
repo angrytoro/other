@@ -1,0 +1,4 @@
+Maven:			http://m2eclipse.sonatype.org/sites/m2e/0.12.1.20110112-1712/
+Subclipse:		http://subclipse.tigris.org/update_1.6.x
+Freemaker IDE:	http://download.jboss.org/jbosstools/updates/development/indigo/   (仅装freemarker)
+JavaCC:			http://eclipse-javacc.sourceforge.net/

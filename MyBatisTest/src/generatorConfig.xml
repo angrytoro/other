@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<context id="context1">
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/ec" userId="root"
+			password="123456" />
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<javaModelGenerator targetPackage="com.hiker.model"
+			targetProject="MyBatisTest" />
+		<sqlMapGenerator targetPackage="com.hiker.mapper"
+			targetProject="MyBatisTest" />
+		<javaClientGenerator type="ANNOTATEDMAPPER"
+			targetPackage="com.hiker.mapper" targetProject="MyBatisTest">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<table schema="ec" tableName="buyapplication">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="buytable1">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="buytable2">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="check">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="checkforeach">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="deal">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="dealconfirm">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="dealcontract">
+			<generatedKey column="contractId" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="department">
+			<generatedKey column="departId" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="employee">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="flow">
+			<generatedKey column="flowId" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="group">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="inform">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="material">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="node">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="node_flow">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="project">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="sellapplication">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="sellcontract">
+			<generatedKey column="contractId" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="selltable1">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="selltable2">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="ec" tableName="user">
+			<generatedKey column="userId" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+	</context>
+</generatorConfiguration>

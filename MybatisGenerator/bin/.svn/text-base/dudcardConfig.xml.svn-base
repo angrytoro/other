@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<context id="context1">
+		<property name="autoDelimitKeywords" value="true" />
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+		<plugin type="plugin.LimitPlugin"></plugin>
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/3ghack" userId="root"
+			password="890424ok" />
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<javaModelGenerator targetPackage="com.pjxy.common.model"
+			targetProject="MybatisGen" />
+		<!-- <sqlMapGenerator targetPackage="com.pjxy.common.dao.mapper" targetProject="MybatisGen" 
+			/> -->
+		<javaClientGenerator type="ANNOTATEDMAPPER"
+			targetPackage="com.pjxy.common.dao" targetProject="MybatisGen">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<table schema="3ghack" tableName="user">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="3ghack" tableName="admin">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="3ghack" tableName="block">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="3ghack" tableName="bulletin">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="3ghack" tableName="post">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="3ghack" tableName="regist">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+		<table schema="3ghack" tableName="reply">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" />
+		</table>
+	</context>
+</generatorConfiguration>

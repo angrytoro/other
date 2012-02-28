@@ -1,0 +1,5 @@
+#surefire
+#Wed Aug 17 22:51:27 CST 2011
+user.dir=E\:\\EclipseWorkspace\\ch-test-maven
+localRepository=C\:\\Users\\adullboy\\.m2\\repository
+basedir=E\:\\EclipseWorkspace\\ch-test-maven

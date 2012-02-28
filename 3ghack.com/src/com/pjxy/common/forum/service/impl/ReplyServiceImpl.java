@@ -1,0 +1,76 @@
+package com.pjxy.common.forum.service.impl;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.mybatis.guice.transactional.Transactional;
+
+import com.pjxy.common.dao.ReplyMapper;
+import com.pjxy.common.forum.service.ReplyService;
+import com.pjxy.common.model.Reply;
+import com.pjxy.common.model.ReplyExample;
+import com.pjxy.common.model.User;
+
+public class ReplyServiceImpl implements ReplyService {
+	@Inject
+	private ReplyMapper mapper;
+
+	@Override
+	@Transactional
+	public List<Reply> getReplyByPostId(int postId, boolean withTop, int start,
+			int count) {
+		String orderClause = null;
+		ReplyExample example = new ReplyExample();
+		if (withTop) {
+			orderClause = "TOP desc, ID desc";
+		} else {
+			orderClause = "ID desc";
+		}
+		example.createCriteria().andPostIdEqualTo(postId);
+		example.setOrderByClause(orderClause);
+		example.setLimitStart(start);
+		example.setLimitEnd(count);
+		return mapper.selectByExampleWithBLOBs(example);
+	}
+
+	@Override
+	public List<Reply> getReplyByUser(User user, int start, int count) {
+		ReplyExample example = new ReplyExample();
+		example.createCriteria().andUserIdEqualTo(user.getId());
+		example.setOrderByClause("CREATE_TIME desc");
+		example.setLimitStart(start);
+		example.setLimitEnd(count);
+		return mapper.selectByExample(example);
+	}
+
+	@Override
+	public int countUserReply(User user) {
+		ReplyExample example = new ReplyExample();
+		example.createCriteria().andUserIdEqualTo(user.getId());
+		return mapper.countByExample(example);
+	}
+
+	@Override
+	public boolean addReply(Reply reply) {
+		if (mapper.insert(reply) > 0)
+			return true;
+		return false;
+	}
+
+	@Override
+	public Reply getReplyById(int replyId) {
+
+		return mapper.selectByPrimaryKey(replyId);
+	}
+
+	@Override
+	public boolean updateReply(Reply reply) {
+		if (reply == null)
+			return false;
+		if (mapper.updateByPrimaryKeySelective(reply) > 0)
+			return true;
+		return false;
+	}
+
+}

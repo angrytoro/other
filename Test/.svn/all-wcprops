@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/dudcard/!svn/ver/12/Test
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/dudcard/!svn/ver/12/Test/pom.xml
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/dudcard/!svn/ver/12/Test/.project
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/dudcard/!svn/ver/12/Test/.classpath
+END
